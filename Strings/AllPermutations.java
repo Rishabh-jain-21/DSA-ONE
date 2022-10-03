@@ -15,17 +15,17 @@ public class AllPermutations {
 
     public static void solution(String str) {
         int length = str.length();
-        int fact = Factorial(length);
+        long fact = Factorial(length);
 
-        for (int i = 0; i < fact; i++) {
-            int temp = i;
+        for (long i = 0; i < fact; i++) {
+            long temp = i;
             StringBuilder sb = new StringBuilder(str);
             for (int j = length; j >= 1; j--) {
-                int quet = temp / j;
-                int rem = temp % j;
+                long quet = temp / j;
+                long rem = temp % j;
 
-                System.out.print(sb.charAt(rem));
-                sb.deleteCharAt(rem);
+                System.out.print(sb.charAt((int) rem));
+                sb.deleteCharAt((int) rem);
 
                 temp = quet;
             }
@@ -33,7 +33,7 @@ public class AllPermutations {
         }
     }
 
-    public static int Factorial(int num) {
+    public static long Factorial(int num) {
         // base case
         if (num == 1) {
             return 1;
