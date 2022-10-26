@@ -5,15 +5,14 @@ public class AllPermutations {
         // System.out.print("LOL, Wokload");
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-        AllPermutations(str, 0, "");
+        // AllPermutations(str, 0, "");
     }
 
-    public static void AllPermutations(str, index, newstring){
-        //base case
-        if(newstring.length() == str.length()){
-            System.out.println(newstring);            
-        }
+    // public static void AllPermutations(str, index, newstring){
+    // //base case
+    // if(newstring.length() == str.length()){
+    // System.out.println(newstring);
+    // }
 
-        
-    }
+    // }
 }

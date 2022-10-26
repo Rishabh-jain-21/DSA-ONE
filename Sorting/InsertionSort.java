@@ -9,6 +9,7 @@ public class InsertionSort {
             arr[i] = sc.nextInt();
         }
         sort(arr);
+        sc.close();
     }
 
     public static void sort(int[] arr) {
