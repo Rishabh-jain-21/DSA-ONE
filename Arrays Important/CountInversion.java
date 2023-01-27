@@ -1,6 +1,9 @@
-
-// condition for inversion is : where i < j and arr[i] > arr[j]
 import java.util.Scanner;
+// condition for inversion is : where i < j and arr[i] > arr[j]
+/* we can count the inversions using two methods first one is brute force which is simply got all the inversions and then count 
+ * 
+ * second onc is we can simply do with the help of the merge sort problem here what we can found is that in merge sort if the elements at the left array is greated than the right arary than all the elements in the left array will we greater than the right array we will use this logic simply in merge sort to get the desired result
+*/
 
 public class CountInversion {
 
