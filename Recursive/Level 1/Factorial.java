@@ -1,19 +1,14 @@
-import java.util.Scanner;
-
-public class Factorial {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-
-        System.out.print(factorial(a));
-        sc.close();
+class Factorial {
+    public static void main(String[] args) {
+        System.out.println(factorial(1));
     }
 
-    static int factorial(int num) {
+    private static int factorial(int f) {
         // base case
-        if (num == 1) {
+        if (f == 0) {
             return 1;
         }
-        return num * factorial(num - 1);
+
+        return f * factorial(f - 1);
     }
 }

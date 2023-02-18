@@ -1,53 +1,36 @@
-// rotate a 2d matrix in anti-clockwise direction
 class Main {
     public static void main(String[] args) {
-        int mat[][] = { { 1, 2, 3, 4 },
-                { 5, 6, 7, 8 },
-                { 9, 10, 11, 12 },
-                { 13, 14, 15, 16 } };
-        rotate(mat, mat.length);
-        displayMatrix(mat.length, mat);
+        System.out.println(countOdds(8, 10));
     }
 
-    static void displayMatrix(int N, int mat[][]) {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++)
-                System.out.print(" " + mat[i][j]);
-
-            System.out.print("\n");
-        }
-        System.out.print("\n");
-    }
-
-    private static void rotate(int[][] arr, int N) {
-        // taking the transpose of the matrix
-        for (int i = 0; i < N; i++) {
-            for (int j = i; j < N; j++) {
-                if (i != j) {
-                    swap(arr, i, j);
-                }
+    public String addBinary(String a, String b) {
+        int i = a.length() - 1;
+        int j = b.length() - 1;
+        int carry = 0;
+        String ans = "";
+        int elm1 = 0,elm2 = 0;
+        while((i >= 0) || (b >= 0)){
+            if(i >= 0){
+                elm1 = a.charAt(i) - '0';
+                i--;
+            }else{
+                elm1 = 0;
             }
-        }
+            if(j >= 0){
+                elm2 = a.charAt(j) - '0';
+                j--;
+            }else{
+                elm2 = 0;
+            }
 
-        // for anticlockwise we will simply reverse the transposed array
-        for (int i = 0; i < N; i++) {
-            reverse(arr, i, 0, N - 1);
-        }
-    }
-
-    private static void swap(int[][] arr, int i, int j) {
-        int swap = arr[i][j];
-        arr[i][j] = arr[j][i];
-        arr[j][i] = swap;
-    }
-
-    private static void reverse(int[][] arr, int f, int i, int j) {
-        while (i < j) {
-            int swap = arr[i][f];
-            arr[i][f] = arr[j][f];
-            arr[j][f] = swap;
-            i++;
-            j--;
+            if(elm1 + elm2 + carry == 2){
+                ans = "0" + ans;
+                carry = 1;
+            }else if(elm1 + elm2 + carry == 1){
+                carry = 0;
+                ans = "1" + ans;
+            }
+            return ans;
         }
     }
 }
