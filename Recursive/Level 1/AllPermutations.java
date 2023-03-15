@@ -21,6 +21,7 @@ public class AllPermutations {
         // base case
         if (ds.size() == arr.length) {
             ans.add(new ArrayList<>(ds));
+            return;
         }
 
         for (int i = 0; i < arr.length; i++) {
